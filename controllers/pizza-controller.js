@@ -30,7 +30,7 @@ const pizzaController = {
 };
 
 // createPizza
-createPizza({ body }, res);
+createPizza({ body }, res){
 Pizza.create(body)
   .then((dbPizzaData) => res.json(dbPizzaData))
   .catch((err) => res.status(400).json(err));
@@ -46,7 +46,7 @@ Pizza.findOneAndUpdate({ _id: params.id }, body, { new: true })
   })
   .catch((err) => res.status(400).json(err));
 // delete pizza
-deletePizza({ params }, res) ;
+deletePizza({ params }, res) {
     Pizza.findOneAndDelete({ _id: params.id })
       .then(dbPizzaData => {
         if (!dbPizzaData) {
