@@ -1,16 +1,15 @@
-const router = require('express').Router();
-const apiRoutes = require('./api');
-const htmlRoutes = require('./html/html-routes');
+const router = require("express").Router();
+const apiRoutes = require("./api");
+const htmlRoutes = require("./html/html-routes");
 
-router.use('/api', apiRoutes);
-router.use('/', htmlRoutes);
+router.use("/api", apiRoutes);
+router.use("/", htmlRoutes);
 
 router.use((req, res) => {
-  res.status(404).send('<h1>😝 404 Error!</h1>');
+  res.status(404).send("<h1>😝 404 Error!</h1>");
 });
-const commentRoutes = require('./comment-routes');
-const pizzaRoutes = require('./pizza-routes');
+router.route("/:pizzaId").post(addComment);
 
-router.use('/comments', commentRoutes);
-router.use('/pizzas', pizzaRoutes);
+// /api/comments/<pizzaId>/<commentId>
+router.route("/:pizzaId/:commentId").delete(removeComment);
 module.exports = router;
