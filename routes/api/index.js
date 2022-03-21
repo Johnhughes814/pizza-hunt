@@ -1,8 +1,6 @@
-const router = require('express').Router();
-const pizzaRoutes = require('./pizza-routes');
-
-router.use('/pizzas', pizzaRoutes);
-router.route("/:pizzaId").post(addComment);
-router.route("/:pizzaId/:commentId").delete(removeComment);
-
+const router = require("express").Router();
+const pizzaRoutes = require("./pizza-routes");
+const commentRoutes = require("./comment-routes");
+router.use("/comments", commentRoutes);
+router.use("/pizzas", pizzaRoutes);
 module.exports = router;
