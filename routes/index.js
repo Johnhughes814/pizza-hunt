@@ -10,5 +10,4 @@ router.use((req, res) => {
 });
 
 // /api/comments/<pizzaId>/<commentId>
-router.route("/:pizzaId/:commentId").delete(removeComment);
 module.exports = router;
