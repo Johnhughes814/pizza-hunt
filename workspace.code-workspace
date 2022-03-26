@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "pizza-hunt",
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
